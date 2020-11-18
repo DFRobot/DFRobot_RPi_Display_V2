@@ -33,9 +33,9 @@ epaper = dfrobot_epaper.DFRobot_Epaper_SPI(RASPBERRY_SPI_BUS, RASPBERRY_SPI_DEV,
 
 # clear screen
 epaper.begin()
-epaper.clear(epaper.WHITE)
-epaper.flush(epaper.FULL)
-time.sleep(1)
+
+epaper.clearScreen();
+
 
 # config extension fonts
 ft = Freetype_Helper(fontFilePath)

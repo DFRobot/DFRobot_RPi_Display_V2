@@ -29,9 +29,9 @@ epaper = dfrobot_epaper.DFRobot_Epaper_SPI(RASPBERRY_SPI_BUS, RASPBERRY_SPI_DEV,
 
 # clear screen
 epaper.begin()
-epaper.clear(epaper.WHITE)
-epaper.flush(epaper.FULL)
-time.sleep(1)
+
+epaper.clearScreen();
+#time.sleep(1)
 
 epaper.bitmapFile(0, 0, "./logo_colorbits1.bmp") # show bitmap file
 epaper.flush(epaper.PART)

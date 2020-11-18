@@ -33,9 +33,7 @@ epaper = dfrobot_epaper.DFRobot_Epaper_SPI(RASPBERRY_SPI_BUS, RASPBERRY_SPI_DEV,
 
 # clear screen
 epaper.begin()
-epaper.clear(epaper.WHITE)
-epaper.flush(epaper.FULL)
-time.sleep(1)
+epaper.clearScreen();
 
 # config extension fonts
 ft = Freetype_Helper(fontFilePath)
@@ -44,9 +42,9 @@ epaper.setExFonts(ft) # init with fonts file
 epaper.setTextFormat(1, epaper.BLACK, epaper.WHITE, 2, 2)
 epaper.setExFontsFmt(24, 24) # set extension fonts width and height
 
-epaper.clear(epaper.WHITE)
-epaper.flush(epaper.PART)
-epaper.setTextCursor(0,10)
+#epaper.clear(epaper.WHITE)
+#epaper.flush(epaper.PART)
+epaper.setTextCursor(10,10)
 epaper.printStrLn("中国  北京")
 epaper.printStrLn("USA   Washington")
 epaper.printStrLn("日本  東京")

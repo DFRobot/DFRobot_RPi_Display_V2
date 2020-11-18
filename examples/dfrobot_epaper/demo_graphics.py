@@ -29,11 +29,10 @@ epaper = dfrobot_epaper.DFRobot_Epaper_SPI(RASPBERRY_SPI_BUS, RASPBERRY_SPI_DEV,
 
 # clear screen and set line width to 3
 epaper.begin()
-epaper.clear(epaper.WHITE)
-epaper.flush(epaper.FULL)
-epaper.setLineWidth(3)
+epaper.clearScreen();
+#epaper.setLineWidth(3)
 time.sleep(1)
-
+epaper.readID()
 for i in range(10, 50):
   epaper.pixel(10, i * 2, epaper.BLACK)
 epaper.flush(epaper.PART)
@@ -58,4 +57,5 @@ epaper.flush(epaper.PART)
 epaper.triangle(210, 20, 190, 100, 230, 100, epaper.BLACK)
 epaper.flush(epaper.PART)
 epaper.fillTriangle(210, 40, 200, 90, 220, 90, epaper.BLACK)
-epaper.flush(epaper.PART)
+
+#epaper.flush(epaper.FULL)

@@ -14,8 +14,13 @@ class SPI:
     self._bus.open(0, 0)
     self._bus.no_cs = True
     self._bus.max_speed_hz = speed
+    self._bus.threewire  = True
 
   def transfer(self, buf):
     if len(buf):
-      return self._bus.xfer(buf)
+      return self._bus.writebytes(buf)
     return []
+  def readData(self, cmd):
+    return self._bus.readbytes(cmd)
+    #return  0
+    

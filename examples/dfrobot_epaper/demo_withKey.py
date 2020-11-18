@@ -79,10 +79,7 @@ keyB.setInterrupt(GPIO.FALLING, keyBCallBack) # set key interrupt callback
 
 # clear screen
 epaper.begin()
-epaper.clear(epaper.WHITE)
-epaper.flush(epaper.FULL)
-time.sleep(1)
-
+epaper.clearScreen();
 epaper.setTextFormat(1, epaper.BLACK, epaper.WHITE, 2, 0) # set text size, color, background, interval row, interval col
 
 keyCount = 0
@@ -114,4 +111,8 @@ while True:
     epaper.printStr("key test")
     epaper.flush(epaper.PART)
     epaper.setTextCursor(0, 32) # set text cursor to origin and clear
+
+    
+    
+
   time.sleep(0.01)
